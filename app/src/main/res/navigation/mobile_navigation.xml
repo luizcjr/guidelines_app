@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_guidelines">
+
+    <fragment
+        android:id="@+id/navigation_guidelines"
+        android:name="com.luiz.guidelines.ui.fragments.guidelines.GuidelinesFragment"
+        android:label="@string/title_bottom_guidelines"
+        tools:layout="@layout/guidelines_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.luiz.guidelines.ui.fragments.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/perfil" />
+</navigation>

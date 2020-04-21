@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "246431387861",
+    "firebase_url": "https://guidelines-9ca86.firebaseio.com",
+    "project_id": "guidelines-9ca86",
+    "storage_bucket": "guidelines-9ca86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246431387861:android:14e5178fd554cf33f5925c",
+        "android_client_info": {
+          "package_name": "com.luiz.guidelines"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246431387861-366pc3ihv0clj3isat4o7o0ea7n953as.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx3eqpcSqZhMMUvYNgN9xv4D3JczAKgIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246431387861-366pc3ihv0clj3isat4o7o0ea7n953as.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

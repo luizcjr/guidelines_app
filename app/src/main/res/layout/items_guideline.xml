@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="guidelines"
+            type="com.luiz.guidelines.models.Guidelines" />
+
+        <import type="com.luiz.guidelines.util.Utils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_sixteen"
+        android:background="@drawable/bcg_rounded_white"
+        android:padding="@dimen/margin_sixteen">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabelTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/title_title"
+            android:textColor="@color/colorGreyLogin"
+            android:textSize="@dimen/text_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:fontFamily="@font/montserrat"
+            android:text="@{guidelines.title}"
+            android:textColor="@color/colorGreyLogin"
+            android:textSize="@dimen/text_sixteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabelDescriptionShort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/title_short_description"
+            android:textColor="@color/colorGreyLogin"
+            android:textSize="@dimen/text_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescriptionShort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:fontFamily="@font/montserrat"
+            android:text="@{guidelines.descriptionShort}"
+            android:textColor="@color/colorGreyLogin"
+            android:textSize="@dimen/text_sixteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelDescriptionShort" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCollapse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twenty_four"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionShort">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_eight"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/details"
+                android:textColor="@color/colorGreyLogin"
+                android:textSize="@dimen/text_eighteen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_eight"
+                android:fontFamily="@font/montserrat"
+                android:text="@{guidelines.description}"
+                android:textColor="@color/colorGreyLogin"
+                android:textSize="@dimen/text_sixteen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelAuthor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_sixteen"
+                android:layout_marginEnd="@dimen/margin_eight"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/title_author"
+                android:textColor="@color/colorGreyLogin"
+                android:textSize="@dimen/text_eighteen"
+                app:layout_constraintEnd_toStartOf="@+id/btnAction"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_eight"
+                android:layout_marginEnd="@dimen/margin_eight"
+                android:fontFamily="@font/montserrat"
+                android:text="@{guidelines.author}"
+                android:textColor="@color/colorGreyLogin"
+                android:textSize="@dimen/text_sixteen"
+                app:layout_constraintEnd_toStartOf="@+id/btnAction"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelAuthor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_sixteen"
+                android:background="@drawable/bcg_btn_red"
+                android:fontFamily="@font/montserrat"
+                android:padding="@dimen/margin_sixteen"
+                android:text="@string/title_finish"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_sixteen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

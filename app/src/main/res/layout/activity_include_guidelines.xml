@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="IncludeGuidelineBinding">
+
+        <variable
+            name="includeGuidelineViewModel"
+            type="com.luiz.guidelines.ui.activities.include_guidelines.IncludeGuidelinesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.include_guidelines.IncludeGuidelinesActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_thirty_two">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/llSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_twenty_four"
+                    android:layout_marginTop="@dimen/margin_thirty_two"
+                    android:layout_marginEnd="@dimen/margin_twenty_four"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                    <View
+                        android:layout_width="@dimen/margin_zero"
+                        android:layout_height="@dimen/margin_one"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@color/colorGreyLogin" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="@dimen/margin_zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/title_include_guideline"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreyLogin"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="@dimen/margin_zero"
+                        android:layout_height="@dimen/margin_one"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@color/colorGreyLogin" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilTitle"
+                    style="@style/TextEditTextDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_thirty_two"
+                    android:layout_marginTop="@dimen/margin_thirty_two"
+                    android:layout_marginEnd="@dimen/margin_thirty_two"
+                    app:error="@{includeGuidelineViewModel.title.error}"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTitle"
+                        style="@style/TextEditTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bcg_register_border_grey"
+                        android:drawablePadding="@dimen/margin_sixteen"
+                        android:hint="@string/title_title"
+                        android:inputType="text"
+                        android:padding="@dimen/margin_sixteen"
+                        android:text="@={includeGuidelineViewModel.title.value}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDescriptionShort"
+                    style="@style/TextEditTextDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_thirty_two"
+                    android:layout_marginTop="@dimen/margin_thirty_two"
+                    android:layout_marginEnd="@dimen/margin_thirty_two"
+                    app:error="@{includeGuidelineViewModel.shortDescription.error}"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilTitle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescriptionShort"
+                        style="@style/TextEditTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bcg_register_border_grey"
+                        android:drawablePadding="@dimen/margin_sixteen"
+                        android:hint="@string/title_short_description"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:padding="@dimen/margin_sixteen"
+                        android:text="@={includeGuidelineViewModel.shortDescription.value}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDetail"
+                    style="@style/TextEditTextDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_thirty_two"
+                    android:layout_marginTop="@dimen/margin_thirty_two"
+                    android:layout_marginEnd="@dimen/margin_thirty_two"
+                    app:error="@{includeGuidelineViewModel.description.error}"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilDescriptionShort">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDetail"
+                        style="@style/TextEditTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bcg_register_border_grey"
+                        android:drawablePadding="@dimen/margin_sixteen"
+                        android:hint="@string/details"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/margin_sixteen"
+                        android:text="@={includeGuidelineViewModel.description.value}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAuthor"
+                    style="@style/TextEditTextDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_thirty_two"
+                    android:layout_marginTop="@dimen/margin_thirty_two"
+                    android:layout_marginEnd="@dimen/margin_thirty_two"
+                    app:error="@{includeGuidelineViewModel.author.error}"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilDetail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAuthor"
+                        style="@style/TextEditTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bcg_register_border_grey"
+                        android:drawablePadding="@dimen/margin_sixteen"
+                        android:enabled="@{includeGuidelineViewModel.author.value == null}"
+                        android:hint="@string/title_author"
+                        android:inputType="text"
+                        android:padding="@dimen/margin_sixteen"
+                        android:text="@={includeGuidelineViewModel.author.value}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_thirty_two"
+                    android:layout_marginTop="@dimen/margin_thirty_two"
+                    android:layout_marginEnd="@dimen/margin_thirty_two"
+                    android:alpha="@{includeGuidelineViewModel.form.valid ? 1f : 0.2f}"
+                    android:background="@drawable/bcg_btn_primary"
+                    android:enabled="@{includeGuidelineViewModel.form.valid}"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:onClick="@{() -> includeGuidelineViewModel.registerGuideline()}"
+                    android:text="@string/title_include_guideline"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_twenty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilAuthor" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
